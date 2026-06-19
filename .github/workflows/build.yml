@@ -16,4 +16,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: my-app
-          path: build/apk/app-release.apk
+          path: build/**/*.apk  # اینجا تغییر کرد: هر مسیری که apk باشد را برمی‌دارد
