@@ -8,9 +8,12 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - run: pip install flet
-      - run: flet build apk
-      - uses: actions/upload-artifact@v4  # اینجا اصلاح شد
+      - name: Install dependencies
+        run: pip install flet
+      - name: Build APK
+        run: flet build apk --yes
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: my-app
           path: build/apk/app-release.apk
