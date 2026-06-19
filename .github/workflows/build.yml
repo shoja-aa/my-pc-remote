@@ -10,7 +10,7 @@ jobs:
           python-version: '3.11'
       - run: pip install flet
       - run: flet build apk
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4  # اینجا اصلاح شد
         with:
           name: my-app
           path: build/apk/app-release.apk
